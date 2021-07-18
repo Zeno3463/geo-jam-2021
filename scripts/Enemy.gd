@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
-var vel = Vector2(-1, 0)
-var speed = 100
+var vel = Vector2(1, 0)
+var speed = 20
 export var gravity = 50
 
 onready var camera = get_tree().get_root().get_node("Node2D/Player/Camera2D")
