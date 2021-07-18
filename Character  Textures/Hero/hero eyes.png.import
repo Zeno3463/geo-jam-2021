@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/enemy left leg.png-c59eea319ea6ba472babc972bdc1b39b.stex"
+path="res://.import/hero eyes.png-5c1df2855216bd1a1cffaaa3877db3d8.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Character  Textures/enemy left leg.png"
-dest_files=[ "res://.import/enemy left leg.png-c59eea319ea6ba472babc972bdc1b39b.stex" ]
+source_file="res://Character  Textures/Hero/hero eyes.png"
+dest_files=[ "res://.import/hero eyes.png-5c1df2855216bd1a1cffaaa3877db3d8.stex" ]
 
 [params]
 

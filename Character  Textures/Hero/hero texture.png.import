@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/enemy right leg.png-687df22156566a8adcb0a6fe8139bf2f.stex"
+path="res://.import/hero texture.png-5573131c813a8ffb79720eb5098641fa.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Character  Textures/enemy right leg.png"
-dest_files=[ "res://.import/enemy right leg.png-687df22156566a8adcb0a6fe8139bf2f.stex" ]
+source_file="res://Character  Textures/Hero/hero texture.png"
+dest_files=[ "res://.import/hero texture.png-5573131c813a8ffb79720eb5098641fa.stex" ]
 
 [params]
 

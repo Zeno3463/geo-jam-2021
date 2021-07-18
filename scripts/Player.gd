@@ -10,10 +10,10 @@ func _physics_process(_delta):
 	# horizontal movement
 	if Input.is_action_pressed("left"):
 		vel.x = -speed
-		$Weapon.position = Vector2(-30, 0)
+		$Weapon.position = Vector2(-30, 72.028)
 	elif Input.is_action_pressed("right"):
 		vel.x = speed
-		$Weapon.position = Vector2(30, 0)
+		$Weapon.position = Vector2(30, 72.028)
 	else: vel.x = 0
 	
 	# gravity

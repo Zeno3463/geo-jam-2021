@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/enemy right hand.png-bb68b5658d5f6fa5dfcd20eef9ef3c90.stex"
+path="res://.import/hero left hand.png-214bd891761707dd16e664d8aa72c010.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Character  Textures/enemy right hand.png"
-dest_files=[ "res://.import/enemy right hand.png-bb68b5658d5f6fa5dfcd20eef9ef3c90.stex" ]
+source_file="res://Character  Textures/Hero/hero left hand.png"
+dest_files=[ "res://.import/hero left hand.png-214bd891761707dd16e664d8aa72c010.stex" ]
 
 [params]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/hero texture.png-be73380cff44b556f8f859e1b3e70958.stex"
+path="res://.import/hero head.png-b8ba5adee329f7e3581a0782e078ea30.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Character  Textures/hero texture.png"
-dest_files=[ "res://.import/hero texture.png-be73380cff44b556f8f859e1b3e70958.stex" ]
+source_file="res://Character  Textures/Hero/hero head.png"
+dest_files=[ "res://.import/hero head.png-b8ba5adee329f7e3581a0782e078ea30.stex" ]
 
 [params]
 

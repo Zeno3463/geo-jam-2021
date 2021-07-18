@@ -21,7 +21,7 @@ current = true
 smoothing_enabled = true
 
 [node name="Weapon" type="Area2D" parent="Player"]
-position = Vector2( 27.8109, -0.264866 )
+position = Vector2( 43.9177, 72.0285 )
 script = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Weapon"]
