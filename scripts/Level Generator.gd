@@ -19,7 +19,7 @@ func spawnRandom():
 	p.position = spawn_pos
 	add_child(p)
 	
-	if rand_range(0, 1) <= 0.5:
+	if rand_range(0, 1) <= 0.2:
 		var e = enemy.instance()
 		e.position = spawn_pos + Vector2(0, -50)
 		add_child(e)

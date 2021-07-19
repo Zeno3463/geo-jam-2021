@@ -18,16 +18,24 @@ func _physics_process(_delta):
 	if Input.is_action_pressed("left"):
 		vel.x = -speed
 		$robot.scale.x = -0.151
+		$hero.scale.x = -0.135
 		$Weapon.position = Vector2(-30, 72.028)
-		if not attacking: $RobotAnimation.play("Walking")
+		if not attacking: 
+			$RobotAnimation.play("Walking")
+			$HeroAnimation.play("walking")
 	elif Input.is_action_pressed("right"):
 		$robot.scale.x = 0.151
+		$hero.scale.x = 0.135
 		vel.x = speed
 		$Weapon.position = Vector2(30, 72.028)
-		if not attacking: $RobotAnimation.play("Walking")
+		if not attacking: 
+			$RobotAnimation.play("Walking")
+			$HeroAnimation.play("walking")
 	else: 
 		vel.x = 0
-		if not attacking: $RobotAnimation.play("idle")
+		if not attacking: 
+			$RobotAnimation.play("idle")
+			$HeroAnimation.play("idle")
 	
 	# gravity
 	vel.y += gravity
