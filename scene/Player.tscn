@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Character  Textures/Robot/hero body.png" type="Texture" id=1]
 [ext_resource path="res://scripts/Player.gd" type="Script" id=2]
@@ -15,6 +15,7 @@
 [ext_resource path="res://Character  Textures/Hero/hero body.png" type="Texture" id=13]
 [ext_resource path="res://Character  Textures/Hero/hero eye.png" type="Texture" id=14]
 [ext_resource path="res://Character  Textures/Robot/hero mouth.png" type="Texture" id=15]
+[ext_resource path="res://Character  Textures/Hero/hero arm.png" type="Texture" id=16]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 32, 80 )
@@ -537,7 +538,7 @@ tracks/13/keys = {
 [sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 36.6169, 16.5687 )
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=6]
 resource_name = "idle"
 tracks/0/type = "value"
 tracks/0/path = NodePath("hero:position")
@@ -564,7 +565,7 @@ tracks/1/keys = {
 "values": [ 0.0 ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("hero/left hand:position")
+tracks/2/path = NodePath("hero/left arm:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -576,7 +577,7 @@ tracks/2/keys = {
 "values": [ Vector2( 90.4874, 32.6985 ) ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("hero/left hand:rotation_degrees")
+tracks/3/path = NodePath("hero/left arm:rotation_degrees")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -684,7 +685,7 @@ tracks/11/keys = {
 "values": [ 2.18222 ]
 }
 tracks/12/type = "value"
-tracks/12/path = NodePath("hero/right hand:position")
+tracks/12/path = NodePath("hero/right arm:position")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/imported = false
@@ -696,7 +697,7 @@ tracks/12/keys = {
 "values": [ Vector2( -69.1355, 44.8521 ) ]
 }
 tracks/13/type = "value"
-tracks/13/path = NodePath("hero/right hand:rotation_degrees")
+tracks/13/path = NodePath("hero/right arm:rotation_degrees")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/imported = false
@@ -708,8 +709,7 @@ tracks/13/keys = {
 "values": [ 18.2729 ]
 }
 
-[sub_resource type="Animation" id=6]
-resource_name = "walking"
+[sub_resource type="Animation" id=7]
 length = 0.8
 tracks/0/type = "value"
 tracks/0/path = NodePath("hero:position")
@@ -736,7 +736,7 @@ tracks/1/keys = {
 "values": [ 0.0, 0.0, 0.0 ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("hero/left hand:position")
+tracks/2/path = NodePath("hero/left arm:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -748,7 +748,7 @@ tracks/2/keys = {
 "values": [ Vector2( 127.815, -15.6072 ), Vector2( -87.3651, 30.5028 ), Vector2( 127.815, -15.6072 ) ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("hero/left hand:rotation_degrees")
+tracks/3/path = NodePath("hero/left arm:rotation_degrees")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -856,7 +856,7 @@ tracks/11/keys = {
 "values": [ -43.4609, 64.3429, -43.4609 ]
 }
 tracks/12/type = "value"
-tracks/12/path = NodePath("hero/right hand:position")
+tracks/12/path = NodePath("hero/right arm:position")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/imported = false
@@ -868,7 +868,7 @@ tracks/12/keys = {
 "values": [ Vector2( -154.768, 29.4821 ), Vector2( 75.7816, -10.0405 ), Vector2( -154.768, 29.4821 ) ]
 }
 tracks/13/type = "value"
-tracks/13/path = NodePath("hero/right hand:rotation_degrees")
+tracks/13/path = NodePath("hero/right arm:rotation_degrees")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/imported = false
@@ -931,15 +931,26 @@ position = Vector2( -1.88988, 48.507 )
 scale = Vector2( 0.135401, 0.135401 )
 texture = ExtResource( 13 )
 
-[node name="left hand" type="Sprite" parent="hero"]
+[node name="left arm" type="Sprite" parent="hero"]
 position = Vector2( 90.4874, 32.6985 )
 rotation = -0.318183
 z_index = -1
+texture = ExtResource( 16 )
+
+[node name="left hand" type="Sprite" parent="hero/left arm"]
+position = Vector2( 32.3732, 72.8691 )
+z_index = -1
 texture = ExtResource( 9 )
 
-[node name="right hand" type="Sprite" parent="hero"]
+[node name="right arm" type="Sprite" parent="hero"]
 position = Vector2( -69.1355, 44.8521 )
 rotation = 0.318922
+z_index = 1
+texture = ExtResource( 16 )
+
+[node name="right hand" type="Sprite" parent="hero/right arm"]
+position = Vector2( 36.5708, 75.4233 )
+rotation = -2.98023e-08
 z_index = 1
 texture = ExtResource( 9 )
 
@@ -976,8 +987,8 @@ position = Vector2( 23.0173, -5.5559 )
 shape = SubResource( 5 )
 
 [node name="HeroAnimation" type="AnimationPlayer" parent="."]
-anims/idle = SubResource( 7 )
-anims/walking = SubResource( 6 )
+anims/idle = SubResource( 6 )
+anims/walking = SubResource( 7 )
 
 [connection signal="body_entered" from="Weapon" to="Weapon" method="_on_Weapon_body_entered"]
 [connection signal="body_exited" from="Weapon" to="Weapon" method="_on_Weapon_body_exited"]

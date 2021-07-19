@@ -3,7 +3,7 @@ extends Area2D
 var enemies_in_range = null
 
 func _process(delta):
-	if Input.is_action_just_pressed("attack"):
+	if Input.is_action_just_pressed("attack") and get_parent().is_robot:
 		get_parent().attacking = true
 		if enemies_in_range:
 			enemies_in_range.queue_free()

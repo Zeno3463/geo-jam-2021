@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Character  Textures/Enemy/enemy right leg.png" type="Texture" id=1]
 [ext_resource path="res://scripts/Enemy.gd" type="Script" id=2]
@@ -139,6 +139,9 @@ tracks/9/keys = {
 "values": [ -42.8138, 43.3997, -42.8138 ]
 }
 
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 42.1041, 36.2281 )
+
 [node name="Enemy" type="KinematicBody2D"]
 script = ExtResource( 2 )
 
@@ -185,4 +188,11 @@ shape = SubResource( 2 )
 autoplay = "Walking"
 anims/Walking = SubResource( 3 )
 
+[node name="Area2D2" type="Area2D" parent="."]
+position = Vector2( 8.9797, 5.3317 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+shape = SubResource( 4 )
+
 [connection signal="body_exited" from="Area2D" to="." method="_on_Area2D_body_exited"]
+[connection signal="body_entered" from="Area2D2" to="." method="_on_Area2D2_body_entered"]

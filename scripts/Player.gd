@@ -5,9 +5,11 @@ export var speed = 250
 export var gravity = 50
 export var jumpForce = -1000
 var attacking = false
-var is_robot = true
+var is_robot = false
 
 func _physics_process(_delta):
+	
+	if position.y > 1000: die()
 	
 	if Input.is_action_just_pressed("switch"):
 		$robot.visible = not $robot.visible
@@ -45,9 +47,12 @@ func _physics_process(_delta):
 		vel.y = 0
 		
 	# jumping
-	if Input.is_action_pressed("up") and is_on_floor():
+	if Input.is_action_pressed("up") and is_on_floor() and not is_robot:
 		vel.y = jumpForce
 	
 	
 	move_and_slide(vel, Vector2.UP)
+	
+func die():
+	get_tree().change_scene("res://scene/main scene.tscn")
 
