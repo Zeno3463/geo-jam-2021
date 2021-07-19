@@ -5,23 +5,29 @@ export var speed = 250
 export var gravity = 50
 export var jumpForce = -1000
 var attacking = false
+var is_robot = true
 
 func _physics_process(_delta):
+	
+	if Input.is_action_just_pressed("switch"):
+		$robot.visible = not $robot.visible
+		$hero.visible = not $hero.visible
+		is_robot = not is_robot
 
 	# horizontal movement
 	if Input.is_action_pressed("left"):
 		vel.x = -speed
-		$body.scale.x = -0.151
+		$robot.scale.x = -0.151
 		$Weapon.position = Vector2(-30, 72.028)
-		if not attacking: $AnimationPlayer.play("Walking")
+		if not attacking: $RobotAnimation.play("Walking")
 	elif Input.is_action_pressed("right"):
-		$body.scale.x = 0.151
+		$robot.scale.x = 0.151
 		vel.x = speed
 		$Weapon.position = Vector2(30, 72.028)
-		if not attacking: $AnimationPlayer.play("Walking")
+		if not attacking: $RobotAnimation.play("Walking")
 	else: 
 		vel.x = 0
-		if not attacking: $AnimationPlayer.play("idle")
+		if not attacking: $RobotAnimation.play("idle")
 	
 	# gravity
 	vel.y += gravity
