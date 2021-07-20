@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/muzzle_02.png-ae1df7c47ea8839bdc62d5f875e180b7.stex"
+path="res://.import/smog.png-773acf00f1d2fe4629fe0ad9b5a8fe63.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://PNG (Black background)/muzzle_02.png"
-dest_files=[ "res://.import/muzzle_02.png-ae1df7c47ea8839bdc62d5f875e180b7.stex" ]
+source_file="res://smog/smog.png"
+dest_files=[ "res://.import/smog.png-773acf00f1d2fe4629fe0ad9b5a8fe63.stex" ]
 
 [params]
 
