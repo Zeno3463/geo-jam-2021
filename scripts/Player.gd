@@ -54,5 +54,12 @@ func _physics_process(_delta):
 	move_and_slide(vel, Vector2.UP)
 	
 func die():
-	get_tree().change_scene("res://scene/main scene.tscn")
+	var lives = get_parent().get_node("CanvasLayer/Lives").get_child_count()
+	if lives <= 0:
+		get_tree().change_scene("res://scene/main scene.tscn")
+	else:
+		modulate = Color.red
+		get_parent().get_node("CanvasLayer/Lives").get_child(lives-1).queue_free()
+		yield(get_tree().create_timer(0.1), "timeout")
+		modulate = Color.white
 
