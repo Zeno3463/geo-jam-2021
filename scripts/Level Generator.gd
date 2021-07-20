@@ -16,6 +16,7 @@ func _process(delta):
 func spawnRandom():
 	var p = platform.instance()
 	p.scale.x = rand_range(5, 10)
+	p.scale.y = p.scale.x
 	p.position = spawn_pos
 	add_child(p)
 	
