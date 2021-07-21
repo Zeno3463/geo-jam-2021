@@ -6,10 +6,15 @@ export var gravity = 50
 export var jumpForce = -1000
 var attacking = false
 var is_robot = false
+var is_dead = false
 
 func _physics_process(_delta):
 	
+	if is_dead: return
+	
 	if position.y > 1000: die()
+	
+	get_parent().get_node("CanvasLayer").score = int(position.x/300)
 	
 	if Input.is_action_just_pressed("switch"):
 		$robot.visible = not $robot.visible
@@ -56,10 +61,17 @@ func _physics_process(_delta):
 func die():
 	var lives = get_parent().get_node("CanvasLayer/Lives").get_child_count()
 	if lives <= 0:
-		get_tree().change_scene("res://scene/main scene.tscn")
+		is_dead = true
+		$hero.queue_free()
+		$robot.queue_free()
+		$TextureRect/Label.text = "score: " + str(get_parent().get_node("CanvasLayer").score)
+		$Tween.interpolate_property($TextureRect, "rect_position", $TextureRect.rect_position, Vector2($TextureRect.rect_position.x, -305.58), 1, Tween.TRANS_SINE, Tween.EASE_IN_OUT)
+		$Tween.start()
 	else:
 		modulate = Color.red
 		get_parent().get_node("CanvasLayer/Lives").get_child(lives-1).queue_free()
 		yield(get_tree().create_timer(0.1), "timeout")
 		modulate = Color.white
 
+func _on_TextureButton_pressed():
+	get_tree().change_scene("res://scene/main scene.tscn")
