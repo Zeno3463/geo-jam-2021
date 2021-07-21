@@ -75,3 +75,6 @@ func die():
 
 func _on_TextureButton_pressed():
 	get_tree().change_scene("res://scene/main scene.tscn")
+
+func _on_TextureButton2_pressed():
+	get_tree().change_scene("res://scene/Main Menu.tscn")
