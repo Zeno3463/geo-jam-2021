@@ -1,11 +1,11 @@
 [gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://GUI/ui back.png" type="Texture" id=1]
-[ext_resource path="res://GUI/play button.png" type="Texture" id=2]
-[ext_resource path="res://GUI/game name.png" type="Texture" id=3]
-[ext_resource path="res://GUI/credit button.png" type="Texture" id=4]
+[ext_resource path="res://sprites/gui/ui back.png" type="Texture" id=1]
+[ext_resource path="res://sprites/gui/play button.png" type="Texture" id=2]
+[ext_resource path="res://final ui s/game name (final).png" type="Texture" id=3]
+[ext_resource path="res://sprites/gui/credit button.png" type="Texture" id=4]
 [ext_resource path="res://scripts/Main Menu.gd" type="Script" id=5]
-[ext_resource path="res://credits/credits.png" type="Texture" id=6]
+[ext_resource path="res://final ui s/credits final.png" type="Texture" id=6]
 
 [sub_resource type="Animation" id=1]
 resource_name = "slide"
@@ -76,9 +76,9 @@ __meta__ = {
 
 [node name="TextureRect2" type="TextureRect" parent="CanvasLayer"]
 margin_left = -19.8114
-margin_top = -828.019
+margin_top = -868.594
 margin_right = 1051.19
-margin_bottom = -64.0186
+margin_bottom = -104.594
 texture = ExtResource( 6 )
 expand = true
 __meta__ = {

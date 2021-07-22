@@ -1,21 +1,21 @@
 [gd_scene load_steps=24 format=2]
 
-[ext_resource path="res://Character  Textures/Robot/hero body.png" type="Texture" id=1]
+[ext_resource path="res://sprites/Character  Textures/Robot/hero body.png" type="Texture" id=1]
 [ext_resource path="res://scripts/Player.gd" type="Script" id=2]
-[ext_resource path="res://Character  Textures/Robot/hero eyes.png" type="Texture" id=3]
-[ext_resource path="res://Character  Textures/Robot/hero right leg.png" type="Texture" id=4]
-[ext_resource path="res://Character  Textures/Robot/hero left hand.png" type="Texture" id=5]
-[ext_resource path="res://Character  Textures/Hero/hero head.png" type="Texture" id=6]
-[ext_resource path="res://Character  Textures/Robot/hero left leg.png" type="Texture" id=7]
-[ext_resource path="res://Character  Textures/Robot/hero right hand.png" type="Texture" id=8]
-[ext_resource path="res://Character  Textures/Hero/hero hand.png" type="Texture" id=9]
+[ext_resource path="res://sprites/Character  Textures/Robot/hero left hand.png" type="Texture" id=3]
+[ext_resource path="res://sprites/Character  Textures/Robot/hero right hand.png" type="Texture" id=4]
+[ext_resource path="res://sprites/Character  Textures/Robot/hero right leg.png" type="Texture" id=5]
+[ext_resource path="res://sprites/Character  Textures/Hero/hero head.png" type="Texture" id=6]
+[ext_resource path="res://sprites/Character  Textures/Robot/hero left leg.png" type="Texture" id=7]
+[ext_resource path="res://sprites/Character  Textures/Robot/hero eyes.png" type="Texture" id=8]
+[ext_resource path="res://sprites/Character  Textures/Hero/hero hand.png" type="Texture" id=9]
 [ext_resource path="res://scripts/Weapon.gd" type="Script" id=10]
-[ext_resource path="res://Character  Textures/Robot/hero head.png" type="Texture" id=11]
-[ext_resource path="res://Character  Textures/Hero/hero leg.png" type="Texture" id=12]
-[ext_resource path="res://Character  Textures/Hero/hero body.png" type="Texture" id=13]
-[ext_resource path="res://Character  Textures/Hero/hero eye.png" type="Texture" id=14]
-[ext_resource path="res://Character  Textures/Robot/hero mouth.png" type="Texture" id=15]
-[ext_resource path="res://Character  Textures/Hero/hero arm.png" type="Texture" id=16]
+[ext_resource path="res://sprites/Character  Textures/Robot/hero head.png" type="Texture" id=11]
+[ext_resource path="res://sprites/Character  Textures/Hero/hero leg.png" type="Texture" id=12]
+[ext_resource path="res://sprites/Character  Textures/Hero/hero body.png" type="Texture" id=13]
+[ext_resource path="res://sprites/Character  Textures/Hero/hero eye.png" type="Texture" id=14]
+[ext_resource path="res://sprites/Character  Textures/Robot/hero mouth.png" type="Texture" id=15]
+[ext_resource path="res://sprites/Character  Textures/Hero/hero arm.png" type="Texture" id=16]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 32, 80 )
@@ -902,12 +902,12 @@ texture = ExtResource( 15 )
 
 [node name="eyes" type="Sprite" parent="robot/head"]
 position = Vector2( 0, -52.8749 )
-texture = ExtResource( 3 )
+texture = ExtResource( 8 )
 
 [node name="right leg" type="Sprite" parent="robot"]
 position = Vector2( -254.461, 304.031 )
 rotation = 1.00645
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 
 [node name="left leg" type="Sprite" parent="robot"]
 position = Vector2( 228.023, 257.766 )
@@ -919,12 +919,12 @@ texture = ExtResource( 7 )
 position = Vector2( -118.969, 19.8281 )
 rotation = 1.43839
 z_index = -1
-texture = ExtResource( 5 )
+texture = ExtResource( 3 )
 
 [node name="right hand" type="Sprite" parent="robot"]
 position = Vector2( 49.5703, -13.2188 )
 rotation = -1.34356
-texture = ExtResource( 8 )
+texture = ExtResource( 4 )
 
 [node name="hero" type="Sprite" parent="."]
 position = Vector2( -1.88988, 48.507 )

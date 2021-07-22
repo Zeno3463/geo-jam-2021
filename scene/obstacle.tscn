@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Level design/obstacls/obstacle1.png" type="Texture" id=1]
+[ext_resource path="res://sprites/Level design/obstacls/obstacle1.png" type="Texture" id=1]
 
 [sub_resource type="CircleShape2D" id=1]
 

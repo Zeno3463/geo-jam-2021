@@ -62,6 +62,7 @@ func die():
 	var lives = get_parent().get_node("CanvasLayer/Lives").get_child_count()
 	if lives <= 0:
 		is_dead = true
+		$Light2D.queue_free()
 		$hero.queue_free()
 		$robot.queue_free()
 		$TextureRect/Label.text = "score: " + str(get_parent().get_node("CanvasLayer").score)
@@ -71,7 +72,7 @@ func die():
 		modulate = Color.red
 		get_parent().get_node("CanvasLayer/Lives").get_child(lives-1).queue_free()
 		yield(get_tree().create_timer(0.1), "timeout")
-		modulate = Color.white
+		modulate = Color8(137, 137, 137, 255)
 
 func _on_TextureButton_pressed():
 	get_tree().change_scene("res://scene/main scene.tscn")

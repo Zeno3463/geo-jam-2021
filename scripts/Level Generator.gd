@@ -3,7 +3,11 @@ extends Node2D
 var num_of_platforms = 0
 var spawn_pos = Vector2.ZERO
 var platform = preload("res://scene/Platform.tscn")
-var enemies = [preload("res://scene/Enemy.tscn"), preload("res://scene/Enemy2.tscn")]
+var enemies = [
+	preload("res://scene/Enemy.tscn"), 
+	preload("res://scene/Enemy2.tscn"),
+	preload("res://scene/Enemy3.tscn")
+]
 
 func _ready():
 	randomize()
@@ -21,7 +25,7 @@ func spawnRandom():
 	add_child(p)
 	
 	if rand_range(0, 1) <= 0.2:
-		var e = enemies[int(rand_range(0, 2))].instance()
+		var e = enemies[int(rand_range(0, len(enemies)))].instance()
 		e.position = spawn_pos + Vector2(0, -50)
 		add_child(e)
 	

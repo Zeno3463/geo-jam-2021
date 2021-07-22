@@ -3,12 +3,12 @@ extends StaticBody2D
 onready var camera = get_tree().get_root().get_node("Node2D/Player/Camera2D")
 onready var levelGenerator = get_tree().get_root().get_node("Node2D/Level Generator")
 var trees = [
-	preload("res://Level design/trees/tree1.png"),
-	preload("res://Level design/trees/tree2.png"),
-	preload("res://Level design/trees/tree3.png"),
-	preload("res://Level design/trees/tree4.png"),
-	preload("res://Level design/trees/tree5.png"),
-	preload("res://Level design/trees/tree6.png")
+	preload("res://sprites/Level design/trees/tree1.png"),
+	preload("res://sprites/Level design/trees/tree2.png"),
+	preload("res://sprites/Level design/trees/tree3.png"),
+	preload("res://sprites/Level design/trees/tree4.png"),
+	preload("res://sprites/Level design/trees/tree5.png"),
+	preload("res://sprites/Level design/trees/tree6.png")
 ]
 var obstacle = preload("res://scene/obstacle.tscn")
 
@@ -28,7 +28,7 @@ func _ready():
 	if haveObstacle <= 0.5:
 		var obs = obstacle.instance()
 		obs.position = Vector2(rand_range(-10, 10) ,-12.5)
-		obs.scale = Vector2.ONE * 0.2
+		obs.scale = Vector2.ONE * 0.1
 		obs.connect("body_entered", self, "on_Area2D_body_entered")
 		add_child(obs)
 
