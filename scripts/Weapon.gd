@@ -6,6 +6,7 @@ var startTimeBtwShot = 1
 
 func _process(delta):
 	if Input.is_action_just_pressed("attack") and get_parent().is_robot and timeBtwShot <= 0:
+		$AudioStreamPlayer.play()
 		get_parent().attacking = true
 		if enemies_in_range:
 			enemies_in_range.hurt()

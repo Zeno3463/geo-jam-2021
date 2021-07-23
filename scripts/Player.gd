@@ -8,6 +8,9 @@ var attacking = false
 var is_robot = false
 var is_dead = false
 
+var heroSound = preload("res://musics/aahhh_1.wav")
+var robotSound = preload("res://musics/robot.wav")
+
 func _physics_process(_delta):
 	
 	if is_dead: return
@@ -59,6 +62,9 @@ func _physics_process(_delta):
 	move_and_slide(vel, Vector2.UP)
 	
 func die():
+	if is_robot: $AudioStreamPlayer.stream = robotSound
+	else: $AudioStreamPlayer.stream = heroSound
+	$AudioStreamPlayer.play()
 	var lives = get_parent().get_node("CanvasLayer/Lives").get_child_count()
 	if lives <= 0:
 		is_dead = true

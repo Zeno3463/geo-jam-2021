@@ -986,9 +986,13 @@ script = ExtResource( 10 )
 position = Vector2( 23.0173, -5.5559 )
 shape = SubResource( 5 )
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Weapon"]
+
 [node name="HeroAnimation" type="AnimationPlayer" parent="."]
 anims/idle = SubResource( 6 )
 anims/walking = SubResource( 7 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 
 [connection signal="body_entered" from="Weapon" to="Weapon" method="_on_Weapon_body_entered"]
 [connection signal="body_exited" from="Weapon" to="Weapon" method="_on_Weapon_body_exited"]

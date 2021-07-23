@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://sprites/Character  Textures/boss enemy/enemy leg.png" type="Texture" id=1]
 [ext_resource path="res://scripts/Enemy.gd" type="Script" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://sprites/Character  Textures/boss enemy/enemy arm.png" type="Texture" id=4]
 [ext_resource path="res://sprites/Character  Textures/boss enemy/enemy head.png" type="Texture" id=5]
 [ext_resource path="res://sprites/Character  Textures/boss enemy/enemy hand.png" type="Texture" id=6]
+[ext_resource path="res://musics/soundeffect.wav" type="AudioStream" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 21.0153, 36.8179 )
@@ -281,6 +282,9 @@ shape = SubResource( 3 )
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "walking"
 anims/walking = SubResource( 4 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
 
 [connection signal="body_exited" from="Area2D" to="." method="_on_Area2D_body_exited"]
 [connection signal="body_entered" from="Area2D2" to="." method="_on_Area2D2_body_entered"]

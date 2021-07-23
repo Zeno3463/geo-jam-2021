@@ -14,6 +14,12 @@ func _process(delta):
 		levelGenerator.num_of_platforms -= 1
 		queue_free()
 	if health <= 0:
+		health = 1
+		$AudioStreamPlayer.play()
+		for child in get_children():
+			if child != $AudioStreamPlayer:
+				child.queue_free()
+		yield($AudioStreamPlayer, "finished")
 		queue_free()
 
 func _physics_process(delta):
@@ -23,10 +29,11 @@ func _physics_process(delta):
 	move_and_slide(Vector2(vel.x * speed, vel.y) , Vector2.UP)
 
 func hurt():
-	health -= 1
+	$AudioStreamPlayer.play()
 	$Head.modulate = Color.red
 	yield(get_tree().create_timer(0.1), "timeout")
 	$Head.modulate = Color.white
+	health -= 1
 
 func _on_Area2D_body_exited(body):
 	scale.x *= -1
